@@ -1,0 +1,1158 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cárcava | Taberna Tradicional Castellana | Valladolid</title>
+    <meta name="description" content="Taberna tradicional La Cárcava en Valladolid. Tapas artesanales, vinos selectos de Ribera del Duero y ambiente castellano auténtico junto a la Catedral.">
+    <meta name="keywords" content="taberna Valladolid, tapas tradicionales, vinos Ribera del Duero, restaurante catedral Valladolid, gastronomía castellana">
+    <meta name="author" content="La Cárcava">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #c19b2e;
+            --accent-color: #8b0000;
+            --light-color: #f8f9fa;
+            --dark-color: #121212;
+            --text-color: #333;
+            --gray-light: #e8e8e8;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow: 0 5px 20px rgba(0,0,0,0.08);
+            --shadow-dark: 0 10px 30px rgba(0,0,0,0.15);
+            --border-radius: 4px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            background-color: white;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 3vw, 3rem);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .text-center h2 {
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: clamp(1rem, 1.05vw, 1.05rem);
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .lead {
+            font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+            color: white;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(20px, 4vw, 30px);
+        }
+        
+        .section-padding {
+            padding: clamp(60px, 8vw, 100px) 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .logo:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: clamp(1.5rem, 2.5vw, 2.5rem);
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+            text-transform: uppercase;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* Hero */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('https://www.guiarepsol.com/content/dam/repsol-guia/guia-cf/restaurante/imagenes/media-filer_public-7e-26-7e26bfe1-ada6-4f03-afb3-e77bdc76e653-17399-la-carcava-ebf2a48b0e934b43866ae26d00dfe23e.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 80px;
+            position: relative;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 5.5vw, 5.5rem);
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: clamp(14px, 16px, 16px) clamp(30px, 40px, 40px);
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border: none;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 0.9vw, 0.9rem);
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            border-radius: var(--border-radius);
+        }
+        
+        .btn:hover {
+            background: #b08c26;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 8vw, 80px);
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-dark);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: clamp(350px, 500px, 500px);
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Specialties */
+        .specialties {
+            background: #f9f9f9;
+        }
+        
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(30px, 4vw, 40px);
+        }
+        
+        .specialty-card {
+            background: white;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-dark);
+        }
+        
+        .specialty-img {
+            height: clamp(200px, 250px, 250px);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .specialty-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .specialty-card:hover .specialty-img img {
+            transform: scale(1.1);
+        }
+        
+        .specialty-content {
+            padding: clamp(25px, 30px, 30px);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .specialty-content h3 {
+            color: var(--primary-color);
+            font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(40px, 8vw, 80px);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #f5f5f5;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover .contact-icon {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .hours-table {
+            background: #f5f5f5;
+            padding: clamp(30px, 40px, 40px);
+            border-radius: var(--border-radius);
+        }
+        
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+        
+        /* Reservation Form */
+        .reservation-form {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+            font-size: clamp(0.85rem, 0.9vw, 0.9rem);
+        }
+        
+        input, textarea, select {
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.9rem, 0.95vw, 0.95rem);
+            transition: var(--transition);
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(193, 155, 46, 0.1);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(30px, 4vw, 40px);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: clamp(25px, 30px, 30px);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: clamp(1rem, 1.1vw, 1.1rem);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: clamp(0.9rem, 1vw, 1rem);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 15px;
+        }
+        
+        .rating {
+            color: #FFD700;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: clamp(60px, 8vw, 80px) 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(40px, 6vw, 60px);
+            margin-bottom: 60px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: clamp(1.1rem, 1.3vw, 1.3rem);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .specialties-grid,
+            .contact-container,
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .testimonial-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 600px;
+            }
+            
+            .reservation-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 80px 20px 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            nav li {
+                margin: 0 0 20px 0;
+                text-align: left;
+            }
+            
+            nav a {
+                display: block;
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                min-height: 600px;
+            }
+            
+            .specialties-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .testimonials {
+                background-attachment: scroll;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                margin-right: 15px;
+            }
+            
+            .hours-table {
+                padding: 25px;
+            }
+            
+            .footer-social a {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">LA <span>CÁRCAVA</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>La Cárcava</h1>
+                <div class="hero-subtitle">Taberna Tradicional Castellana</div>
+                <p class="lead">Sabores auténticos, vinos selectos y el mejor ambiente en el corazón de Valladolid</p>
+                <a href="#contacto" class="btn">Reservar Mesa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section-padding" id="nosotros">
+        <div class="container">
+            <div class="text-center">
+                <h2>Sobre Nosotros</h2>
+            </div>
+            <div class="about-content">
+                <div class="fade-in">
+                    <p>En <strong>La Cárcava</strong>, ubicados junto a la Catedral de Valladolid, ofrecemos una experiencia gastronómica única que combina la tradición castellana con productos de primera calidad. Fundada en 1998, hemos mantenido la esencia de la taberna tradicional mientras innovamos constantemente en nuestra oferta de tapas y vinos seleccionados.</p>
+                    <p>Nuestro local, cuidadosamente decorado con elementos castellanos, crea un ambiente acogedor donde la atención personalizada es nuestra seña de identidad. Cada plato es preparado con ingredientes locales de temporada, respetando las recetas tradicionales pero añadiendo un toque contemporáneo.</p>
+                    <p>Nuestra bodega cuenta con una selección exquisita de vinos, especialmente de la Denominación de Origen Ribera del Duero, disponibles tanto por copa como por botella.</p>
+                    <p style="margin-top: 30px; font-style: italic; color: var(--primary-color); border-left: 3px solid var(--secondary-color); padding-left: 20px;">
+                        "Donde la tradición castellana se encuentra con la excelencia culinaria"
+                    </p>
+                </div>
+                <div class="about-image fade-in delay-1">
+                    <img src="https://valladolidcityoffilm.com/wp-content/uploads/2022/07/LA-CA%CC%81RCAVA-4-1024x683.jpg" alt="Interior tradicional de la Taberna La Cárcava en Valladolid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties -->
+    <section class="specialties section-padding" id="especialidades">
+        <div class="container">
+            <div class="text-center">
+                <h2>Nuestras Especialidades</h2>
+            </div>
+            <div class="specialties-grid">
+                <div class="specialty-card fade-in">
+                    <div class="specialty-img">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/b4/3f/0f/caption.jpg?w=1200&h=1200&s=1" alt="Tostas artesanales La Cárcava - Tapas tradicionales">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Tostas Artesanales</h3>
+                        <p>Elaboradas con pan rústico recién horneado e ingredientes seleccionados. Nuestras combinaciones únicas incluyen el <em>Castellano</em> (jamón ibérico, queso curado), el <em>Lacón & Champiñón</em> y el exclusivo <em>Noruego</em> con salmón y bacalao.</p>
+                    </div>
+                </div>
+                <div class="specialty-card fade-in delay-1">
+                    <div class="specialty-img">
+                        <img src="https://gastronotaspolloalioli.wordpress.com/wp-content/uploads/2020/07/img_20200728_211056.jpg?w=825" alt="Vinos de Ribera del Duero La Cárcava">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Vinos de Autor</h3>
+                        <p>Selección curada de vinos de denominación de origen, especialmente de Ribera del Duero. Disponibles por copa para que puedas disfrutar de una amplia variedad. Nuestro sommelier te asesorará para encontrar el maridaje perfecto.</p>
+                    </div>
+                </div>
+                <div class="specialty-card fade-in delay-2">
+                    <div class="specialty-img">
+                        <img src="https://images.mnstatic.com/2b/17/2b178b3bf1f123e55b36d8a814cdd543.jpg" alt="Tapas tradicionales castellanas La Cárcava">
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Tapas Tradicionales</h3>
+                        <p>Recetas clásicas castellanas preparadas con esmero y productos locales. Desde montaditos tradicionales hasta nuestra famosa hamburguesa de buey, pasando por opciones vegetarianas. Cada tapa es una experiencia de sabor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="color: white; margin-bottom: 60px;">Lo que dicen nuestros clientes</h2>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "La mejor taberna de Valladolid sin duda. El ambiente es único y las tapas están siempre increíbles. Volveremos seguro."
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">María González</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-text">
+                        "Excelente relación calidad-precio. Los vinos por copa permiten probar diferentes opciones. El trato es excepcional y el ambiente muy acogedor."
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="testimonial-author">Carlos Ruiz</div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-text">
+                        "Llevamos años viniendo y siempre nos sorprenden con algo nuevo. La calidad de los productos es inmejorable. Nuestro lugar favorito en Valladolid."
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-author">Ana Martínez</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section-padding" id="contacto">
+        <div class="container">
+            <div class="text-center">
+                <h2>Contacto y Reservas</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Dirección</h4>
+                            <p>Calle Cascajares, 3<br>47001 Valladolid, España</p>
+                            <p style="margin-top: 5px; font-size: 0.9rem; color: #777;">Junto a la Catedral de Valladolid</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Teléfono</h4>
+                            <p>+34 983 123 456</p>
+                            <p style="margin-top: 5px; font-size: 0.9rem; color: #777;">Para reservas y consultas</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>reservas@lacarcava.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Gerente</h4>
+                            <p>Gonzalo Moreno</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form - No submit functionality -->
+                    <h3 style="margin-top: 40px;">Consulta de Disponibilidad</h3>
+                    <form class="reservation-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Ej: 612345678">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="Ej: ejemplo@email.com">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Tu mensaje o consulta *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Por favor, especifique fecha, hora y número de personas para su reserva..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <p style="font-size: 0.9rem; color: #777; margin-top: 10px;">
+                                <i class="fas fa-info-circle"></i> Nos pondremos en contacto con usted para confirmar la disponibilidad.
+                            </p>
+                            <button type="button" class="btn" onclick="handleContactForm()">Enviar Consulta</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="hours-table">
+                    <h3>Horario de Apertura</h3>
+                    <div class="hours-row">
+                        <span>Lunes</span>
+                        <span class="time">19:00 - 01:00</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Martes a Jueves</span>
+                        <span class="time">12:00-17:00 / 19:00-01:00</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Viernes</span>
+                        <span class="time">12:00 - 01:30</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Sábado</span>
+                        <span class="time">12:00 - 02:00</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Domingo</span>
+                        <span class="time">12:00-17:00 / 19:00-01:00</span>
+                    </div>
+                    <div class="hours-row" style="background: rgba(193, 155, 46, 0.05); margin-top: 20px; padding: 20px; border-radius: var(--border-radius);">
+                        <span style="font-weight: 600;">Para grupos</span>
+                        <span class="time" style="font-weight: 500;">Consultar disponibilidad</span>
+                    </div>
+                    <h3 style="margin-top: 40px;">Cómo Llegar</h3>
+                    <p style="margin-top: 15px; line-height: 1.6;">La Cárcava se encuentra en el casco histórico de Valladolid, a escasos metros de la Catedral. Disponemos de zona de aparcamiento público cercana en Plaza de Portugalete y Calle Angustias.</p>
+                    <div style="margin-top: 25px; padding: 20px; background: rgba(0,0,0,0.03); border-radius: var(--border-radius);">
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Medios de transporte</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 5px;"><i class="fas fa-bus" style="color: var(--secondary-color); margin-right: 10px;"></i> Líneas de autobús: 2, 8, 18, C2</p>
+                        <p style="font-size: 0.95rem;"><i class="fas fa-taxi" style="color: var(--secondary-color); margin-right: 10px;"></i> Parada de taxi: Plaza de Portugalete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>La Cárcava</h3>
+                    <p>Taberna tradicional en el corazón de Valladolid donde la tradición castellana se encuentra con la excelencia culinaria. Más de 20 años ofreciendo experiencias gastronómicas memorables.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook La Cárcava"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram La Cárcava"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="TripAdvisor La Cárcava"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="#inicio">Inicio</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#nosotros">Nosotros</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#especialidades">Especialidades</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#contacto">Contacto y Reservas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Cascajares, 3 - Valladolid</li>
+                        <li><i class="fas fa-phone"></i> +34 983 123 456</li>
+                        <li><i class="fas fa-envelope"></i> reservas@lacarcava.com</li>
+                        <li><i class="fas fa-user"></i> Gonzalo Moreno (Gerente)</li>
+                        <li><i class="fas fa-clock"></i> Abrimos todos los días</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 La Cárcava Taberna Tradicional. Todos los derechos reservados. | Diseño optimizado para la mejor experiencia gastronómica</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isVisible = mainNav.style.display === 'block';
+            mainNav.style.display = isVisible ? 'none' : 'block';
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.className = isVisible ? 'fas fa-bars' : 'fas fa-times';
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isVisible ? 'auto' : 'hidden';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.style.display = 'none';
+                    mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Handle contact form submission (without actual submission)
+        function handleContactForm() {
+            const form = document.getElementById('contactForm');
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !phone || !email || !message) {
+                alert('Por favor, complete todos los campos obligatorios.');
+                return;
+            }
+            
+            // Simulate form processing
+            const btn = form.querySelector('.btn');
+            const originalText = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('¡Gracias por su consulta, ' + name + '! Le contactaremos en breve al teléfono ' + phone + ' para confirmar disponibilidad.');
+                form.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 1500);
+        }
+        
+        // Initialize mobile menu state
+        if (window.innerWidth <= 768) {
+            mainNav.style.display = 'none';
+        }
+        
+        // Optimize images on load
+        window.addEventListener('load', function() {
+            // Preload images for better performance
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.loading = 'lazy';
+            });
+            
+            // Add fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            document.querySelectorAll('.specialty-card, .about-content > div, .about-image, .testimonial-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Close menu on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && window.innerWidth <= 768 && mainNav.style.display === 'block') {
+                mainNav.style.display = 'none';
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
